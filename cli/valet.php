@@ -19,7 +19,7 @@ use Illuminate\Container\Container;
  */
 Container::setInstance(new Container);
 
-$version = '1.1.12';
+$version = '0.3.0';
 
 $app = new Application('Laravel Valet', $version);
 
@@ -49,6 +49,15 @@ $app->command('install', function () {
 
     output(PHP_EOL.'<info>Valet installed successfully!</info>');
 })->descriptions('Install the Valet services');
+
+/**
+ * Rescan Valet parked folders and update the hosts file (c:\Windows\System32\drivers\etc\hosts)
+ */
+$app->command('scan', function () {
+    Host::scan();
+    output(PHP_EOL.'<info>Valet domains updated!</info>');
+})->descriptions('Rescan Valet parked folders');
+
 
 /**
  * Get or set the domain currently being used by Valet.
