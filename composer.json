@@ -1,6 +1,6 @@
 {
     "name": "larawhale/valet4win",
-    "description": "A more enjoyable local development experience for Mac.",
+    "description": "A more enjoyable local development experience for Windows.",
     "keywords": ["laravel", "windows", "zonda"],
     "license": "MIT",
     "authors": [
