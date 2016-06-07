@@ -21,10 +21,10 @@ class Host
      * @param  Filesystem  $files
      * @return void
      */
-    function __construct(Brew $brew, CommandLine $cli, Filesystem $files)
+    function __construct(Configuration $config, CommandLine $cli, Filesystem $files)
     {
+        $this->config = $config;
         $this->cli = $cli;
-        $this->brew = $brew;
         $this->files = $files;
     }
 
@@ -35,7 +35,23 @@ class Host
      */
     function scan()
     {
-        echo file_get_contents('c:\Windows\System32\drivers\etc\hosts');
+        $marker = '# Valet Custom Section';
+        $hostFile = 'c:\Windows\System32\drivers\etc\hosts';
+        $content = $marker.PHP_EOL;
+        foreach ($this->config->read()['paths'] as $path) {
+            foreach (glob($path . '/*', GLOB_ONLYDIR) as $dir) {
+                $content .= '127.0.0.1 '.basename($dir).'.dev'.PHP_EOL;
+            }
+        }
+        $content .= $marker.' END'.PHP_EOL;
+        $original = file_get_contents($hostFile);
+        $pattern = "/$marker.*$marker END/s";
+        if (preg_match($pattern, $original)) {
+            $content = preg_replace($pattern, $content, $original);
+        } else {
+            $content = $original.PHP_EOL.$content;
+        }
+        file_put_contents($hostFile, $content);
     }
 
     /**
