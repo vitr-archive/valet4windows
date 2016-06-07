@@ -1,0 +1,37 @@
+{
+    "name": "laravel/valet",
+    "description": "A more enjoyable local development experience for Mac.",
+    "keywords": ["laravel", "windows", "zonda"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Vitaliy Ryepnoy",
+            "email": "vitdotonline@gmail.com"
+        }
+    ],
+    "autoload": {
+        "files": [
+            "cli/includes/compatibility.php",
+            "cli/includes/facades.php",
+            "cli/includes/helpers.php"
+        ],
+        "psr-4": {
+            "Valet\\": "cli/Valet/"
+        }
+    },
+    "require": {
+        "php": ">=5.5.9",
+        "illuminate/container": "~5.1",
+        "mnapoli/silly": "~1.0",
+        "symfony/process": "~2.7|~3.0",
+        "nategood/httpful": "~0.2",
+        "tightenco/collect": "^5.2"
+    },
+    "require-dev": {
+        "mockery/mockery": "0.9.*",
+        "phpunit/phpunit": ">=4.8.24"
+    },
+    "bin": [
+        "valet"
+    ]
+}
