@@ -32,4 +32,4 @@ Caddy server couldn't be run as a service on Windows (means the cmd is always op
     - [ ] port domain command
     - [ ] port fetch-share-url command
     - [ ]  ...
-[ ] Clean up all the OS X leftovers
+- [ ] Clean up all the OS X leftovers
