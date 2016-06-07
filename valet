@@ -23,13 +23,12 @@ fi
 # If the command is one of the commands that requires "sudo" privileges
 # then we'll proxy the incoming CLI request using sudo, which allows
 # us to never require the end users to manually specify each sudo.
-if [[ "$EUID" -ne 0 ]]
-then
-echo "xxxxxxxxxxxxxxxxxx"
+#if [[ "$EUID" -ne 0 ]]
+#then
     #sudo $SOURCE "$@"
     #$SOURCE "$@"
     #exit
-fi
+#fi
 
 # If the command is to run the updater we'll run the updater script and
 # let it handle this entire update. It will download a fresh copy of
@@ -63,6 +62,5 @@ then
 # and let it handle the request. These are commands which can be run
 # without sudo and don't require taking over terminals like Ngrok.
 else
-echo "!!!!!!!!!"
     php "$DIR/cli/valet.php" "$@"
 fi
