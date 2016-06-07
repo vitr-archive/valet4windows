@@ -1,5 +1,6 @@
-# valet4win
-Windows version of the legendary Laravel Valet
+# Laravel Valet For Windows [![License](https://poser.pugx.org/larawhale/valet4win/license.svg?format=flat-square)](https://packagist.org/packages/larawhale/valet4win) [![Analytics](https://vitr-analytics.appspot.com/UA-75628680-1/valet4win?flat-gif&useReferer)](https://github.com/vitr/google-analytics-beacon)
+
+Windows version of the legendary [Laravel Valet](https://github.com/laravel/valet)
 
 ### WIP (work in progress)
 This is a proof of concept. As a GO program, Caddy is a cross platform application, it works the same great on Windows.
