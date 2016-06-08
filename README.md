@@ -14,8 +14,8 @@ So far, it's straight Caddy plus php, with less magic than on Mac, but it's simp
 2. Install composer
 3. composer global require laravel/installer
 4. composer global require larawhale/valet4win
-5. mkdir %HOMEPATH%\Sites
-6. cd %HOMEPATH%\Sites
+5. mkdir ~/Sites
+6. cd ~/Sites
 7. valet install
 8. valet park
 9. laravel new blog
