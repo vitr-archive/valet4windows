@@ -37,7 +37,10 @@ _**Tokenizer PHP Extension** is included by default in all Windows builds_
 
 ### Unresolved Issues
 * https://github.com/mholt/caddy/issues/732#issuecomment-207819773  
-Caddy server couldn't be run as a service on Windows (means the cmd is always open), on a flip side could be easily closed))
+Caddy server couldn't be run as a service on Windows (means the cmd is always open), on a flip side could be easily closed)), here is more
+https://forum.caddyserver.com/t/requested-plugins-ideas-for-developers/127
+https://github.com/mholt/caddy/issues/293
+it's requested as a plugin for Caddy, hopefully they implement this soon.
 * Rescan parked folders manually after adding new subfolder(s) (could be resolved with some sort of filesystem watcher, e.g. node.js)
 
 
