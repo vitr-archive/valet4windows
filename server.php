@@ -5,7 +5,7 @@
  */
 
 //define('VALET_HOME_PATH', posix_getpwuid(fileowner(__FILE__))['dir'].'/.valet');
-define('VALET_HOME_PATH', 'c:/Users/Inspiron/.valet'); 
+define('VALET_HOME_PATH', '~/.valet');
 /**
  * Show the Valet 404 "Not Found" page.
  */

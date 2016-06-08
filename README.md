@@ -26,7 +26,7 @@ Not all the valet commands are currently working, but it's something to start wi
 * valet scan (it updates your hosts file **C:\Windows\System32\drivers\etc\hosts**, so, you have to change its properties to allow full control for current user)
 * run  %APPDATA%\Composer\vendor\larawhale\valet4win\start.bat in the **native windows cmd**
 or you can make a desktop shortcut to this bat file
-* valet open (will open http://blog.dev in chrome)
+* cd blog && valet open (will open http://blog.dev in chrome)
 
 ### Advanced How To
 #### Install php & composer
