@@ -5,7 +5,7 @@
  */
 
 //define('VALET_HOME_PATH', posix_getpwuid(fileowner(__FILE__))['dir'].'/.valet');
-define('VALET_HOME_PATH', '~/.valet');
+define('VALET_HOME_PATH', $_SERVER['HOMEPATH'].'/.valet');
 /**
  * Show the Valet 404 "Not Found" page.
  */
