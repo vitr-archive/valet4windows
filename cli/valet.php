@@ -19,7 +19,7 @@ use Illuminate\Container\Container;
  */
 Container::setInstance(new Container);
 
-$version = '0.5.2';
+$version = '0.5.3';
 
 $app = new Application('Laravel Valet For Windows', $version);
 
