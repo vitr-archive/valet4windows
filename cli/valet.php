@@ -19,9 +19,9 @@ use Illuminate\Container\Container;
  */
 Container::setInstance(new Container);
 
-$version = '0.4.0';
+$version = '0.5.0';
 
-$app = new Application('Laravel Valet', $version);
+$app = new Application('Laravel Valet For Windows', $version);
 
 /**
  * Prune missing directories and symbolic links on every command.
@@ -201,7 +201,7 @@ $app->command('paths', function () {
  $app->command('open', function () {
      $url = "http://".Site::host(getcwd()).'.'.Configuration::read()['domain'].'/';
 
-     passthru("open ".escapeshellarg($url));
+     passthru("\"C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe\" ".escapeshellarg($url));
  })->descriptions('Open the site for the current directory in your browser');
 
 /**
