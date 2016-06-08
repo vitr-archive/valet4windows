@@ -8,6 +8,7 @@ I wanted to run Valet on Windows as quick as possible with minimal changes to th
 So far, it's straight Caddy plus php, with less magic than on Mac, but it's simpler and more transparent. Let's see how useful this version could be and if it proves itself, we can extend and improve it later on.
 
 ### How to Use
+!!! *you must have git-bash or something similar, this doesn't work in standard cmd.* !!! bash comes to windows soon, fingers crossed 
 
 1. Install php
 2. Install composer
@@ -28,10 +29,10 @@ Caddy server couldn't be run as a service on Windows (means the cmd is always op
 
 
 ### Roadmap
-- [ ] Move caddy exec to bin, Caddyfile config to ~/.valet
+- [x] Move caddy exec to bin, Caddyfile config to ~/.valet
 - [ ] Port all original mac Valet commands
     - [ ] port domain 
     - [ ] port fetch-share-url 
     - [ ]  ...
-    - [ ] port uninstall
+    - [ ] port uninstall (It only removes Caddy from services, what should I do? remove the desktop shortcut???)
 - [ ] Clean up all the OS X leftovers

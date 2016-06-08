@@ -29,7 +29,7 @@ class Caddy
     {
         $this->installCaddyFile();
         $this->installCaddyDirectory();
-        $this->installCaddyDaemon();
+//        $this->installCaddyDaemon();
     }
 
     /**
