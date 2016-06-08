@@ -39,7 +39,7 @@ $app->command('install', function () {
     //Caddy::stop();
 
     Configuration::install();
-    //Caddy::install();
+    Caddy::install();
     //PhpFpm::install();
     //DnsMasq::install();
     //Caddy::restart();
