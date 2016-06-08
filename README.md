@@ -8,7 +8,7 @@ I wanted to run Valet on Windows as quick as possible with minimal changes to th
 So far, it's straight Caddy plus php, with less magic than on Mac, but it's simpler and more transparent. Let's see how useful this version could be and if it proves itself, we can extend and improve it later on.
 
 ### MVP (minimum viable product) has arrived
-From v0.5.0 valet4win could be comfortable used with minimum default configuration. I've managed to run it on my Windows10 notebook. There are two manual tasks you have to perform:  
+From v0.5.0 valet4win could be comfortably used with minimum default configuration. I've managed to run it on my Windows10 notebook. There are two manual tasks you have to perform:  
 1. Run valet4win using start.bat (tip: create a desktop shorcut for it)  
 2. Run valet scan every time you create a new folder in your ~/Sites, as valet4win uses the old trick with hosts file. It's a small overhead in comparison to running an extra DNS service on your machine.  
 Not all the valet commands are currently working, but it's something to start with, perhaps, it would be just enough for someone.
