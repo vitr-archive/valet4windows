@@ -20,7 +20,9 @@ So far, it's straight Caddy plus php, with less magic than on Mac, but it's simp
 8. valet park
 9. laravel new blog
 10. valet scan
-11. visit http://blog.dev
+11. run  %APPDATA%\Composer\vendor\larawhale\valet4win\start.bat in the **native windows cmd**
+or you can make a desktop shortcut to this bat file
+12. visit http://blog.dev
 
 ### Unresolved Issues
 * https://github.com/mholt/caddy/issues/732#issuecomment-207819773  
