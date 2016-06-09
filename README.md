@@ -46,6 +46,7 @@ Caddy server couldn't be run as a service on Windows (means the cmd is always op
 - [x] Move caddy exec to bin, Caddyfile config to ~/.valet
 - [ ] Port all original mac Valet commands
     - [x] open 
+    - [x] secure (requires manual restart of Caddy, start.bat) 
     - [ ] domain 
     - [ ] fetch-share-url 
     - [ ]  ...

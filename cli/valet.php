@@ -19,7 +19,7 @@ use Illuminate\Container\Container;
  */
 Container::setInstance(new Container);
 
-$version = '0.5.3';
+$version = '0.6.0';
 
 $app = new Application('Laravel Valet For Windows', $version);
 
@@ -127,13 +127,13 @@ $app->command('unlink [name]', function ($name) {
  * Secure the given domain with a trusted TLS certificate.
  */
 $app->command('secure [domain]', function ($domain = null) {
-    $url = ($domain ?: Site::host(getcwd())).'.'.Configuration::read()['domain'];
 
+    $url = ($domain ?: Site::host(getcwd())).'.'.Configuration::read()['domain'];
     Site::secure($url);
 
-    PhpFpm::restart();
+    //PhpFpm::restart();
 
-    Caddy::restart();
+    //Caddy::restart();
 
     info('The ['.$url.'] site has been secured with a fresh TLS certificate.');
 });
