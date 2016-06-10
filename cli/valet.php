@@ -19,7 +19,7 @@ use Illuminate\Container\Container;
  */
 Container::setInstance(new Container);
 
-$version = '0.6.0';
+$version = '0.6.1';
 
 $app = new Application('Laravel Valet For Windows', $version);
 
@@ -143,11 +143,11 @@ $app->command('unsecure [domain]', function ($domain = null) {
 
     Site::unsecure($url);
 
-    PhpFpm::restart();
+//    PhpFpm::restart();
 
-    Caddy::restart();
+//    Caddy::restart();
 
-    info('The ['.$url.'] site will now serve traffic over HTTP.');
+    info('The ['.$url.'] site will now serve traffic over HTTP. Please, restart Caddy server.');
 });
 
 /**
