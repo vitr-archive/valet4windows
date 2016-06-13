@@ -130,7 +130,6 @@ class Site
         $this->files->ensureDirExists($this->certificatesPath(), user());
 
         $this->createCertificate($url);
-
         $this->files->putAsUser(
             VALET_HOME_PATH.'/Caddy/'.$url, $this->buildSecureCaddyfile($url)
         );

@@ -40,7 +40,7 @@ class Host
         $content = $marker.PHP_EOL;
         foreach ($this->config->read()['paths'] as $path) {
             foreach (glob($path . '/*', GLOB_ONLYDIR) as $dir) {
-                $content .= '127.0.0.1 '.basename($dir).'.dev'.PHP_EOL;
+                $content .= '127.0.0.1 '.basename($dir).'.'.$this->config->read()['domain'].PHP_EOL;
             }
         }
         $content .= $marker.' END'.PHP_EOL;

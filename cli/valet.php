@@ -19,7 +19,7 @@ use Illuminate\Container\Container;
  */
 Container::setInstance(new Container);
 
-$version = '0.6.1';
+$version = '0.6.2';
 
 $app = new Application('Laravel Valet For Windows', $version);
 
@@ -67,15 +67,16 @@ $app->command('domain [domain]', function ($domain = null) {
         return info(Configuration::read()['domain']);
     }
 
-    DnsMasq::updateDomain(
-        $oldDomain = Configuration::read()['domain'], $domain = trim($domain, '.')
-    );
-
+//    DnsMasq::updateDomain(
+//        $oldDomain = Configuration::read()['domain'], $domain = trim($domain, '.')
+//    );
+    $oldDomain = Configuration::read()['domain'];
     Configuration::updateKey('domain', $domain);
+    Host::scan();
 
     Site::resecureForNewDomain($oldDomain, $domain);
-    PhpFpm::restart();
-    Caddy::restart();
+//    PhpFpm::restart();
+//    Caddy::restart();
 
     info('Your Valet domain has been updated to ['.$domain.'].');
 })->descriptions('Get or set the domain used for Valet sites');

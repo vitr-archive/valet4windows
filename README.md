@@ -98,6 +98,7 @@ it's requested as a plugin for Caddy, hopefully they implement this soon.
 - [ ] Implement the same tests as for Mac and maybe some more
 - [x] Move caddy exec to bin, Caddyfile config to ~/.valet
 - [ ] Port all original mac Valet commands
+    - [x] domain 
     - [x] open 
     - [x] secure (requires manual restart of Caddy, start.bat), to get rid of in-browser warning you have to manually install certificate (double click on ~\.valet\Certificates\blog.dev.crt)
     - [x] unsecure 
