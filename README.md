@@ -99,10 +99,12 @@ it's requested as a plugin for Caddy, hopefully they implement this soon.
 - [x] Move caddy exec to bin, Caddyfile config to ~/.valet
 - [ ] Port all original mac Valet commands
     - [x] domain 
+    - [x] forget 
+    - [x] help 
+    - [x] install 
     - [x] open 
     - [x] secure (requires manual restart of Caddy, start.bat), to get rid of in-browser warning you have to manually install certificate (double click on ~\.valet\Certificates\blog.dev.crt)
     - [x] unsecure 
-    - [ ] domain 
     - [ ] fetch-share-url 
     - [ ]  ...
     - [ ] uninstall (It only removes Caddy from services, what should I do? remove the desktop shortcut???)

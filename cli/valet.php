@@ -19,7 +19,7 @@ use Illuminate\Container\Container;
  */
 Container::setInstance(new Container);
 
-$version = '0.6.2';
+$version = '0.6.3';
 
 $app = new Application('Laravel Valet For Windows', $version);
 
@@ -95,6 +95,7 @@ $app->command('park', function () {
  */
 $app->command('forget', function () {
     Configuration::removePath(getcwd());
+    Host::scan();
 
     info("This directory has been removed from Valet's paths.");
 })->descriptions('Remove the current working directory from Valet\'s list of paths');
