@@ -9,10 +9,23 @@ So far, it's straight Caddy plus php, with less magic than on Mac, but it's simp
 
 ### MVP (minimum viable product) has arrived
 From v0.5.0 valet4win could be comfortably used with minimum default configuration. I've managed to run it on my Windows10 notebook. There are two manual tasks you have to perform:  
-1. Run valet4win using start.bat (tip: create a desktop shorcut for it)  
+1. Run valet4win using start.bat (tip: create a desktop shorcut for it)
 2. Run valet scan every time you create a new folder in your ~/Sites, as valet4win uses the old trick with hosts file. It's a small overhead in comparison to running an extra DNS service on your machine.  
 Not all the valet commands are currently working, but it's something to start with, perhaps, it would be just enough for someone.
 
+### Ground breaking release v0.7.0!!!
+From this version you don't have to manually run the start.bat file.
+Usual commands just work in git-bash
+```
+valet start
+valet stop
+```
+In addition to this, ngrok service has been successfully integrated, so, you can use
+```
+valet share
+valet fetch-share-url
+```
+to expose your local webserver to the Internet.
 
 ### Quick How To
 !!! *you must have git-bash or something similar, this doesn't work in standard cmd.* !!! bash comes to windows soon, fingers crossed 
@@ -24,8 +37,7 @@ Not all the valet commands are currently working, but it's something to start wi
 * valet install
 * valet park
 * valet scan (it updates your hosts file **C:\Windows\System32\drivers\etc\hosts**, so, you have to change its properties to allow full control for current user)
-* run  %APPDATA%\Composer\vendor\larawhale\valet4win\start.bat in the **native windows cmd**
-or you can make a desktop shortcut to this bat file
+* valet start
 * cd blog && valet open (will open http://blog.dev in chrome)
 
 ### Advanced How To
@@ -90,7 +102,8 @@ composer global require laravel/installer larawhale/valet4win
 Caddy server couldn't be run as a service on Windows (means the cmd is always open), on a flip side could be easily closed)), here is more
 https://forum.caddyserver.com/t/requested-plugins-ideas-for-developers/127
 https://github.com/mholt/caddy/issues/293
-it's requested as a plugin for Caddy, hopefully they implement this soon.
+it's requested as a plugin for Caddy, hopefully they implement this soon,
+but my workaround with an extra cmd window works just fine.
 * Rescan parked folders manually after adding new subfolder(s) (could be resolved with some sort of filesystem watcher, e.g. node.js)
 
 
@@ -99,11 +112,15 @@ it's requested as a plugin for Caddy, hopefully they implement this soon.
 - [x] Move caddy exec to bin, Caddyfile config to ~/.valet
 - [ ] Port all original mac Valet commands
     - [x] domain 
+    - [x] fetch-share-url 
     - [x] forget 
     - [x] help 
     - [x] install 
     - [x] open 
     - [x] secure (requires manual restart of Caddy, start.bat), to get rid of in-browser warning you have to manually install certificate (double click on ~\.valet\Certificates\blog.dev.crt)
+    - [x] share 
+    - [x] start 
+    - [x] stop 
     - [x] unsecure 
     - [ ] fetch-share-url 
     - [ ]  ...

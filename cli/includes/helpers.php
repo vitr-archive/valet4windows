@@ -3,10 +3,14 @@
 use Illuminate\Container\Container;
 use Symfony\Component\Process\Process;
 
+$bin = realpath(dirname(__FILE__));
+$bin .= '\\..\\..\\bin\\';
+define('VALET_BIN_PATH', $bin);
+
 /**
  * Define the ~/.valet path as a constant.
  */
-define('VALET_HOME_PATH', $_SERVER['HOME'].'/.valet');
+define('VALET_HOME_PATH', $_SERVER['HOMEPATH'].'/.valet');
 
 /**
  * Output the given text to the console.

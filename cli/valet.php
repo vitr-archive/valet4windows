@@ -19,7 +19,7 @@ use Illuminate\Container\Container;
  */
 Container::setInstance(new Container);
 
-$version = '0.6.3';
+$version = '0.7.0';
 
 $app = new Application('Laravel Valet For Windows', $version);
 
@@ -49,6 +49,17 @@ $app->command('install', function () {
 
     output(PHP_EOL.'<info>Valet installed successfully!</info>');
 })->descriptions('Install the Valet services');
+
+/**
+ * Allow Valet to be run more conveniently by allowing the Node proxy to run password-less sudo.
+ */
+$app->command('share', function () {
+    $cmd = 'start cmd.exe @cmd /k "'.VALET_BIN_PATH.'ngrok http -host-header=rewrite blog.dev:80"';
+    pclose(popen($cmd, "r"));
+    $sharedUrl = Ngrok::currentTunnelUrl();
+    exec ('echo '.$sharedUrl.' | clip');
+    output(PHP_EOL.'<info>The shared url: '.$sharedUrl.' is in your clipboard!</info>');
+})->descriptions('Share !!!!!!');
 
 /**
  * Rescan Valet parked folders and update the hosts file (c:\Windows\System32\drivers\etc\hosts)
@@ -217,9 +228,12 @@ $app->command('fetch-share-url', function () {
  * Start the daemon services.
  */
 $app->command('start', function () {
-    PhpFpm::restart();
 
-    Caddy::restart();
+    $cmd = 'start "Valet" cmd.exe @cmd /k "cd '.VALET_BIN_PATH.' && start.bat"';
+    pclose(popen($cmd, "r"));
+    //PhpFpm::restart();
+
+    //Caddy::restart();
 
     info('Valet services have been started.');
 })->descriptions('Start the Valet services');
@@ -239,9 +253,10 @@ $app->command('restart', function () {
  * Stop the daemon services.
  */
 $app->command('stop', function () {
-    PhpFpm::stop();
+    exec('taskkill /IM cmd.exe /FI "WINDOWTITLE eq Valet*"');
+//    PhpFpm::stop();
 
-    Caddy::stop();
+//    Caddy::stop();
 
     info('Valet services have been stopped.');
 })->descriptions('Stop the Valet services');
