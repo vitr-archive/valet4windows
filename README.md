@@ -14,7 +14,7 @@ From v0.5.0 valet4win could be comfortably used with minimum default configurati
 Not all the valet commands are currently working, but it's something to start with, perhaps, it would be just enough for someone.
 
 ### Ground breaking release v0.7.0!!!
-From this version you don't have to manually run the start.bat file.
+From this version you don't have to run manually the start.bat file.
 Usual commands just work in git-bash
 ```
 valet start
