@@ -105,7 +105,7 @@ https://github.com/mholt/caddy/issues/293
 it's requested as a plugin for Caddy, hopefully they implement this soon,
 but my workaround with an extra cmd window works just fine.
 * Rescan parked folders manually after adding new subfolder(s) (could be resolved with some sort of filesystem watcher, e.g. node.js)
-
+* Working with symlinks on Windows requires run git-bash as administrator
 
 ### Roadmap
 - [ ] Combine `scan` with `park, forget, link, unlink`
@@ -117,7 +117,7 @@ but my workaround with an extra cmd window works just fine.
     - [x] forget 
     - [x] help 
     - [x] install 
-    - [x] link 
+    - [x] link (requires run git-bash as administrator)
     - [x] links 
     - [ ] list 
     - [ ] logs 
