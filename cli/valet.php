@@ -19,7 +19,7 @@ use Illuminate\Container\Container;
  */
 Container::setInstance(new Container);
 
-$version = '0.7.2';
+$version = '0.8.0';
 
 $app = new Application('Laravel Valet For Windows', $version);
 
@@ -115,7 +115,7 @@ $app->command('forget', function () {
  * Register a symbolic link with Valet.
  */
 $app->command('link [name]', function ($name) {
-    $linkPath = Site::link(getcwd(), $name = $name ?: basename(getcwd()));
+    $linkPath = Site::link(realpath(getcwd()), $name = $name ?: basename(getcwd()));
 
     info('A ['.$name.'] symbolic link has been created in ['.$linkPath.'].');
 })->descriptions('Link the current working directory to Valet');
@@ -131,7 +131,7 @@ $app->command('links', function () {
  * Unlink a link from the Valet links directory.
  */
 $app->command('unlink [name]', function ($name) {
-    Site::unlink($name ?: basename(getcwd()));
+    Site::unlink($name = $name ?: basename(getcwd()));
 
     info('The ['.$name.'] symbolic link has been removed.');
 })->descriptions('Remove the specified Valet link');
@@ -254,6 +254,7 @@ $app->command('restart', function () {
  */
 $app->command('stop', function () {
     exec('taskkill /IM cmd.exe /FI "WINDOWTITLE eq Valet*"');
+    exec('taskkill /IM cmd.exe /FI "WINDOWTITLE eq Administrator: Valet*"');
 //    PhpFpm::stop();
 
 //    Caddy::stop();

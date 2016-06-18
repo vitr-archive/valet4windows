@@ -38,12 +38,19 @@ class Host
         $marker = '# Valet Custom Section';
         $hostFile = 'c:\Windows\System32\drivers\etc\hosts';
         $content = $marker.PHP_EOL;
+        $domainDirs = [];
         foreach ($this->config->read()['paths'] as $path) {
             foreach (glob($path . '/*', GLOB_ONLYDIR) as $dir) {
-                $content .= '127.0.0.1 '.basename($dir).'.'.$this->config->read()['domain'].PHP_EOL;
+                $domainDirs[] = basename($dir);
             }
         }
-        $content .= $marker.' END'.PHP_EOL;
+        foreach (glob(VALET_HOME_PATH.'/Sites/*') as $dir) {
+            $domainDirs[] = basename($dir);
+        }
+        foreach ($domainDirs as $dir) {
+            $content .= '127.0.0.1 ' . $dir . '.' . $this->config->read()['domain'] . PHP_EOL;
+        }
+        $content .= $marker.' END';
         $original = file_get_contents($hostFile);
         $pattern = "/$marker.*$marker END/s";
         if (preg_match($pattern, $original)) {

@@ -60,7 +60,8 @@ class CommandLine
      */
     public function runAsUser($command, callable $onError = null)
     {
-        return $this->runCommand('sudo -u '.user().' '.$command, $onError);
+//        return $this->runCommand('sudo -u '.user().' '.$command, $onError);
+        return $this->runCommand($command, $onError);
     }
 
     /**
@@ -72,6 +73,8 @@ class CommandLine
      */
     protected function runCommand($command, callable $onError = null)
     {
+        exec ($command);
+        return;
         $onError = $onError ?: function () {};
 
         $process = new Process($command);

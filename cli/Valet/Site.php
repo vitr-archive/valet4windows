@@ -49,12 +49,11 @@ class Site
     function link($target, $link)
     {
         $this->files->ensureDirExists(
-            $linkPath = $this->sitesPath(), user()
+            $linkPath = realpath($this->sitesPath()), user()
         );
 
         $this->config->prependPath($linkPath);
-
-        $this->files->symlinkAsUser($target, $linkPath.'/'.$link);
+        $this->files->symlinkAsUser($target, $linkPath.'\\'.$link);
 
         return $linkPath.'/'.$link;
     }

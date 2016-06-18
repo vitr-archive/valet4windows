@@ -108,6 +108,7 @@ but my workaround with an extra cmd window works just fine.
 
 
 ### Roadmap
+- [ ] Combine `scan` with `park, forget, link, unlink`
 - [ ] Implement the same tests as for Mac and maybe some more
 - [x] Move caddy exec to bin, Caddyfile config to ~/.valet
 - [ ] Port all original mac Valet commands
@@ -116,13 +117,21 @@ but my workaround with an extra cmd window works just fine.
     - [x] forget 
     - [x] help 
     - [x] install 
+    - [x] link 
+    - [x] links 
+    - [ ] list 
+    - [ ] logs 
+    - [ ] on-latest-version 
     - [x] open 
-    - [x] secure (requires manual restart of Caddy, start.bat), to get rid of in-browser warning you have to manually install certificate (double click on ~\.valet\Certificates\blog.dev.crt)
+    - [x] park 
+    - [x] paths 
+    - [ ] restart 
+    - [x] secure (requires manual restart of Caddy, start.bat), to get rid of in-browser warning you have to manually install certificate (double click on ~\.valet\Certificates\blog.dev.crt) 
     - [x] share 
-    - [x] start 
+    - [x] start      
     - [x] stop 
+    - [ ] uninstall 
+    - [x] unlink 
     - [x] unsecure 
-    - [ ] fetch-share-url 
-    - [ ]  ...
-    - [ ] uninstall (It only removes Caddy from services, what should I do? remove the desktop shortcut???)
+    - [ ] which 
 - [ ] Clean up all the OS X leftovers

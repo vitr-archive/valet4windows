@@ -226,8 +226,9 @@ class Filesystem
         if ($this->exists($link)) {
             $this->unlink($link);
         }
-
-        CommandLineFacade::runAsUser('ln -s '.$target.' '.$link);
+//        CommandLineFacade::runAsUser('ln -s '.$target.' '.$link);
+//        echo 'mklink /D "'.$link.'" "'.$target.'"';
+        CommandLineFacade::runAsUser('mklink /D "'.$link.'" "'.$target.'"');
     }
 
     /**
@@ -239,7 +240,8 @@ class Filesystem
     function unlink($path)
     {
         if (file_exists($path) || is_link($path)) {
-            @unlink($path);
+//            @unlink($path);
+            @rmdir($path);
         }
     }
 
