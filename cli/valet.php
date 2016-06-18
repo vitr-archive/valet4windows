@@ -19,7 +19,7 @@ use Illuminate\Container\Container;
  */
 Container::setInstance(new Container);
 
-$version = '0.7.1';
+$version = '0.7.2';
 
 $app = new Application('Laravel Valet For Windows', $version);
 
@@ -229,7 +229,7 @@ $app->command('fetch-share-url', function () {
  */
 $app->command('start', function () {
 
-    $cmd = 'start "Valet" cmd.exe @cmd /k "cd '.VALET_BIN_PATH.' && start.bat"';
+    $cmd = 'start "Valet" cmd.exe @cmd /k "cd '.VALET_BIN_PATH.'/../ && start.bat"';
     pclose(popen($cmd, "r"));
     //PhpFpm::restart();
 
