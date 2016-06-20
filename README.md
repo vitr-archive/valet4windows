@@ -28,7 +28,7 @@ valet fetch-share-url
 to expose your local webserver to the Internet.
 
 ### Testing
-I see the benefits of only integration testing here. I would test each valet command and check the outcomes. Unfortunately, travic doesn't support Windows, so, I perform them manually on Windows machine. (try https://ci.appveyor.com/)
+I see the benefits of only integration testing here. I would test each valet command and check the outcomes. Unfortunately, travis doesn't support Windows, so, I perform them manually on Windows machine. Later on, I may try https://ci.appveyor.com/
 
 
 ### Quick How To
