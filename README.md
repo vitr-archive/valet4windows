@@ -8,9 +8,9 @@ I wanted to run Valet on Windows as quick as possible with minimal changes to th
 So far, it's straight Caddy plus php, with less magic than on Mac, but it's simpler and more transparent. Let's see how useful this version could be and if it proves itself, we can extend and improve it later on.
 
 ### MVP (minimum viable product) has arrived
-From v0.5.0 valet4win could be comfortably used with minimum default configuration. I've managed to run it on my Windows10 notebook. There are two manual tasks you have to perform:  
+From v0.5.0 valet4win could be comfortably used with minimum default configuration. I've managed to run it on my Windows10 notebook. There are two manual tasks you have to perform:
 1. Run valet4win using start.bat (tip: create a desktop shorcut for it)
-2. Run valet scan every time you create a new folder in your ~/Sites, as valet4win uses the old trick with hosts file. It's a small overhead in comparison to running an extra DNS service on your machine.  
+2. Run valet scan every time you create a new folder in your ~/Sites, as valet4win uses the old trick with hosts file. It's a small overhead in comparison to running an extra DNS service on your machine.
 Not all the valet commands are currently working, but it's something to start with, perhaps, it would be just enough for someone.
 
 ### Ground breaking release v0.7.0!!!
@@ -26,6 +26,10 @@ valet share
 valet fetch-share-url
 ```
 to expose your local webserver to the Internet.
+
+### Testing
+I see the benefits of only integration testing here. I would test each valet command and check the outcomes. Unfortunately, travic doesn't support Windows, so, I perform them manually on Windows machine. (try https://ci.appveyor.com/)
+
 
 ### Quick How To
 !!! *you must have git-bash or something similar, this doesn't work in standard cmd.* !!! bash comes to windows soon, fingers crossed 
@@ -119,9 +123,9 @@ but my workaround with an extra cmd window works just fine.
     - [x] install 
     - [x] link (requires run git-bash as administrator)
     - [x] links 
-    - [ ] list 
-    - [ ] logs 
-    - [ ] on-latest-version 
+    - [x] list 
+    - [x] logs 
+    - [x] on-latest-version 
     - [x] open 
     - [x] park 
     - [x] paths 
@@ -133,5 +137,5 @@ but my workaround with an extra cmd window works just fine.
     - [ ] uninstall 
     - [x] unlink 
     - [x] unsecure 
-    - [ ] which 
+    - [x] which 
 - [ ] Clean up all the OS X leftovers
