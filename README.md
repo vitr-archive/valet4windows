@@ -1,4 +1,4 @@
-# Laravel Valet For Windows [![License](https://poser.pugx.org/larawhale/valet4win/license.svg?format=flat-square)](https://packagist.org/packages/larawhale/valet4win) [![Analytics](https://vitr-analytics.appspot.com/UA-75628680-1/valet4win?flat-gif&useReferer)](https://github.com/vitr/google-analytics-beacon)
+# Laravel Valet For Windows [![Latest Stable Version](https://poser.pugx.org/larawhale/valet4win/v/stable?format=flat-square)](https://packagist.org/packages/larawhale/valet4win) [![License](https://poser.pugx.org/larawhale/valet4win/license.svg?format=flat-square)](https://packagist.org/packages/larawhale/valet4win) [![Analytics](https://vitr-analytics.appspot.com/UA-75628680-1/valet4win?flat-gif&useReferer)](https://github.com/vitr/google-analytics-beacon)
 
 Windows version of the legendary [Laravel Valet](https://github.com/laravel/valet)
 
