@@ -144,3 +144,5 @@ but my workaround with an extra cmd window works just fine.
     - [x] unsecure 
     - [x] which 
 - [ ] Clean up all the OS X leftovers
+- [ ] update caddyserver (Latest release  v0.9.0)
+
