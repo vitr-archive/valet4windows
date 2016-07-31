@@ -24,7 +24,7 @@ Please, keep in mind, an arbitrary php application won't work in Valet, you need
 * valet start
 * cd blog && valet open (will open http://blog.dev in chrome)
 
-### Advanced How To
+## Advanced How To
 #### Install php & composer
 As we run php with Caddy in FastCGI mode download **NTS (Non Thread Safe)** version (x86 or x64) from http://windows.php.net/download#php-7.0. Extract downloaded archive to `C:\php`.
 Copy `php.ini-development` as `php.ini` and open it in a text editor. Uncomment extension path for Windows
@@ -86,7 +86,13 @@ If you're on Windows there is a chance that your ports 80 and 443 are already oc
 Read more how to disable ISS here http://stackoverflow.com/questions/30901434/iis-manager-in-windows-10
 and how to fix Skype here http://stackoverflow.com/questions/22994888/why-skype-using-http-or-https-ports-80-and-443  
 
-### Unresolved Issues
+## List of supported applications and frameworks
+- Laravel
+- Symfony
+- WordPress
+
+
+## Unresolved Issues
 * https://github.com/mholt/caddy/issues/732#issuecomment-207819773
 Caddy server couldn't be run as a service on Windows (means the cmd is always open), on a flip side could be easily closed)), here is more
 https://forum.caddyserver.com/t/requested-plugins-ideas-for-developers/127
@@ -96,7 +102,11 @@ but my workaround with an extra cmd window works just fine.
 * Rescan parked folders manually after adding new subfolder(s) (could be resolved with some sort of filesystem watcher, e.g. node.js)
 * Working with symlinks on Windows requires run git-bash as administrator
 
-### Roadmap
+## Testing
+I see the benefits of only integration testing here. I would test each valet command and check the outcomes. Unfortunately, travis doesn't support Windows, so, I perform them manually on Windows machine. Later on, I may try https://ci.appveyor.com/
+
+## Roadmap
+- [ ] add actual tests
 - [ ] Combine `scan` with `park, forget, link, unlink`
 - [ ] Implement the same tests as for Mac and maybe some more
 - [x] Move caddy exec to bin, Caddyfile config to ~/.valet
@@ -127,36 +137,3 @@ but my workaround with an extra cmd window works just fine.
 - [ ] update caddyserver (Latest release  v0.9.0)
 - [ ] update valet drivers
 - [ ] move history into standalone history file
-
-## List of supported applications and frameworks
-
-
-
-## Legacy bs (history of the project)
-### WIP (work in progress)
-This is a proof of concept. As a GO program, Caddy is a cross platform application, it works the same great on Windows.
-I wanted to run Valet on Windows as quick as possible with minimal changes to the original package. It turned out that it's easier to create a new package specifically for Windows, as I'm not using DnsMasq, Brew, etc. I copied the original package in full on my Windows machine and tried to run it, every time I hit an error, I looked into the source code and fixed it, in many cases I just commented a lot of stuff. On the second day I've got MVP and I believe the concept has been proven.
-So far, it's straight Caddy plus php, with less magic than on Mac, but it's simpler and more transparent. Let's see how useful this version could be and if it proves itself, we can extend and improve it later on.
-
-### MVP (minimum viable product) has arrived
-From v0.5.0 valet4win could be comfortably used with minimum default configuration. I've managed to run it on my Windows10 notebook. There are two manual tasks you have to perform:
-1. Run valet4win using start.bat (tip: create a desktop shorcut for it)
-2. Run valet scan every time you create a new folder in your ~/Sites, as valet4win uses the old trick with hosts file. It's a small overhead in comparison to running an extra DNS service on your machine.
-Not all the valet commands are currently working, but it's something to start with, perhaps, it would be just enough for someone.
-
-### Ground breaking release v0.7.0!!!
-From this version you don't have to run manually the start.bat file.
-Usual commands just work in git-bash
-```
-valet start
-valet stop
-```
-In addition to this, ngrok service has been successfully integrated, so, you can use
-```
-valet share
-valet fetch-share-url
-```
-to expose your local webserver to the Internet.
-
-### Testing
-I see the benefits of only integration testing here. I would test each valet command and check the outcomes. Unfortunately, travis doesn't support Windows, so, I perform them manually on Windows machine. Later on, I may try https://ci.appveyor.com/
