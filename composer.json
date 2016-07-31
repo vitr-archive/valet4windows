@@ -1,7 +1,7 @@
 {
-    "name": "larawhale/valet4win",
+    "name": "vitr/valet4windows",
     "description": "A more enjoyable local development experience for Windows.",
-    "keywords": ["laravel", "windows", "zonda"],
+    "keywords": ["laravel", "windows", "zonda", "caddy", "caddyserver"],
     "license": "MIT",
     "authors": [
         {
