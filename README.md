@@ -3,7 +3,7 @@
 ![Laravel Valet for Windows](https://cloud.githubusercontent.com/assets/2770290/17275120/52b52a80-5740-11e6-9e5a-22c4dfa5a977.png)
 
 ## Introduction
-This is windows version of [Laravel Valet](https://github.com/laravel/valet). Valet is a Laravel development environment for minimalists. No Vagrant, No Apache, No Nginx. You can even share your sites publicly using local tunnels. _Yeah, we like it too._
+This is Windows version of [Laravel Valet](https://github.com/laravel/valet). Valet is a Laravel development environment for minimalists. No Vagrant, No Apache, No Nginx. You can even share your sites publicly using local tunnels. _Yeah, we like it too._
 
 Laravel Valet for Windows configures your PC to run [Caddy](https://caddyserver.com/) on demand. Then, using `c:\Windows\System32\drivers\etc\hosts` file, Valet proxies all requests on the `*.dev` domain to point to sites installed on your local machine.
 
