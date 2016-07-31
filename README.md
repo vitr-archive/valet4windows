@@ -101,6 +101,11 @@ From this point use **git-bash** or or other **bash** compatible terminal, as wi
 composer global require laravel/installer larawhale/valet4win
 ```
 
+#### Running Valet
+If you're on Windows there is a chance that your ports 80 and 443 are already occupied by ISS or Skype.
+Read more how to disable ISS here http://stackoverflow.com/questions/30901434/iis-manager-in-windows-10
+and how to fix Skype here http://stackoverflow.com/questions/22994888/why-skype-using-http-or-https-ports-80-and-443  
+
 ### Unresolved Issues
 * https://github.com/mholt/caddy/issues/732#issuecomment-207819773
 Caddy server couldn't be run as a service on Windows (means the cmd is always open), on a flip side could be easily closed)), here is more
