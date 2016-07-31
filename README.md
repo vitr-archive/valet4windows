@@ -9,6 +9,7 @@ Laravel Valet for Windows configures your PC to run [Caddy](https://caddyserver.
 
 In other words, a blazing fast Laravel development environment that uses roughly 7mb of RAM(???have to double check this???). Valet isn't a complete replacement for Vagrant or Homestead, but provides a great alternative if you want flexible basics, prefer extreme speed, or are working on a machine with a limited amount of RAM.
 
+Please, keep in mind, an arbitrary php application won't work in Valet, you need to support them via special drivers. Obviously [Laravel](https://laravel.com/) is supported, as well, as many others popular php applications/frameworks, like [Symfony](https://symfony.com/), [WordPress](https://wordpress.org/), [Joomla](https://www.joomla.org/), etc. The full list is [here](#list-of-supported-application/frameworks)
 
 ### WIP (work in progress)
 This is a proof of concept. As a GO program, Caddy is a cross platform application, it works the same great on Windows.
@@ -154,3 +155,4 @@ but my workaround with an extra cmd window works just fine.
 - [ ] Clean up all the OS X leftovers
 - [ ] update caddyserver (Latest release  v0.9.0)
 
+## List of supported application/frameworks
