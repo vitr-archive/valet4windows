@@ -12,7 +12,7 @@ In other words, a blazing fast Laravel development environment that uses roughly
 Please, keep in mind, an arbitrary php application won't work in Valet, you need to support them via special drivers. Obviously [Laravel](https://laravel.com/) is supported, as well, as many others popular php headliners, like [Symfony](https://symfony.com/), [WordPress](https://wordpress.org/), [Joomla](https://www.joomla.org/), etc. See the full list [here](#list-of-supported-applications-and-frameworks)
 
 ## Quick How To
-!!! *you must have git-bash or something similar, this doesn't work in standard cmd.* !!! bash comes to windows soon, fingers crossed 
+**You must use git-bash or similar shell.** This doesn't work in standard Windows cmd, native bash will soon come to Windows, _fingers crossed_. 
 ```
 composer global require laravel/installer vitr/valet4windows
 mkdir ~/Sites && cd ~/Sites
