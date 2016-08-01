@@ -99,7 +99,8 @@ class Caddy
      */
     function stop()
     {
-        $this->cli->quietly('sudo launchctl unload '.$this->daemonPath);
+        exec('taskkill /IM cmd.exe /FI "WINDOWTITLE eq Valet*"');
+        exec('taskkill /IM cmd.exe /FI "WINDOWTITLE eq Administrator: Valet*"');
     }
 
     /**
@@ -111,6 +112,12 @@ class Caddy
     {
         $this->stop();
 
-        $this->files->unlink($this->daemonPath);
+        if (is_file(VALET_HOME_PATH.'/Caddyfile'))
+            unlink(VALET_HOME_PATH.'/Caddyfile');
+
+        if(is_dir(VALET_HOME_PATH.'/Caddy'))
+            exec('rm -rf ' . VALET_HOME_PATH.'/Caddy');
+
+//        $this->files->unlink($this->daemonPath);
     }
 }

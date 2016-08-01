@@ -19,7 +19,7 @@ use Illuminate\Container\Container;
  */
 Container::setInstance(new Container);
 
-$version = '0.9.0';
+$version = '0.9.1';
 
 $app = new Application('Laravel Valet For Windows', $version);
 
@@ -242,9 +242,10 @@ $app->command('start', function () {
  * Restart the daemon services.
  */
 $app->command('restart', function () {
-    PhpFpm::restart();
+    Caddy::stop();
 
-    Caddy::restart();
+    $cmd = 'start "Valet" cmd.exe @cmd /k "cd '.VALET_BIN_PATH.'/../ && start.bat"';
+    pclose(popen($cmd, "r"));
 
     info('Valet services have been restarted.');
 })->descriptions('Restart the Valet services');
@@ -253,11 +254,10 @@ $app->command('restart', function () {
  * Stop the daemon services.
  */
 $app->command('stop', function () {
-    exec('taskkill /IM cmd.exe /FI "WINDOWTITLE eq Valet*"');
-    exec('taskkill /IM cmd.exe /FI "WINDOWTITLE eq Administrator: Valet*"');
+
 //    PhpFpm::stop();
 
-//    Caddy::stop();
+    Caddy::stop();
 
     info('Valet services have been stopped.');
 })->descriptions('Stop the Valet services');

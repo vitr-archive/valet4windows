@@ -1,9 +1,9 @@
-# Laravel Valet For Windows [![Latest Stable Version](https://poser.pugx.org/larawhale/valet4win/v/stable?format=flat-square)](https://packagist.org/packages/larawhale/valet4win) [![License](https://poser.pugx.org/larawhale/valet4win/license.svg?format=flat-square)](https://packagist.org/packages/larawhale/valet4win) [![Analytics](https://vitr-analytics.appspot.com/UA-75628680-1/valet4win?flat-gif&useReferer)](https://github.com/vitr/google-analytics-beacon)
+# Laravel Valet For Windows [![Latest Stable Version](https://poser.pugx.org/vitr/valet4windows/v/stable?format=flat-square)](https://packagist.org/packages/vitr/valet4windows) [![License](https://poser.pugx.org/vitr/valet4windows/license.svg?format=flat-square)](https://packagist.org/packages/vitr/valet4windows) [![Analytics](https://vitr-analytics.appspot.com/UA-75628680-1/valet4windows?flat-gif&useReferer)](https://github.com/vitr/google-analytics-beacon)
 
 ![Laravel Valet for Windows](https://cloud.githubusercontent.com/assets/2770290/17275120/52b52a80-5740-11e6-9e5a-22c4dfa5a977.png)
 
 ## Introduction
-This is Windows version of [Laravel Valet](https://github.com/laravel/valet). Valet is a Laravel development environment for minimalists. No Vagrant, No Apache, No Nginx. You can even share your sites publicly using local tunnels. _Yeah, we like it too._
+This is Windows version of [Laravel Valet](https://github.com/laravel/valet). Valet is a Laravel development environment for minimalists. This Windows version brings even less software than Valet for Mac and you still can share your sites publicly using local tunnels.
 
 Laravel Valet for Windows configures your PC to run [Caddy](https://caddyserver.com/) on demand. Then, using `c:\Windows\System32\drivers\etc\hosts` file, Valet proxies all requests on the `*.dev` domain to point to sites installed on your local machine.
 
@@ -13,17 +13,16 @@ Please, keep in mind, an arbitrary php application won't work in Valet, you need
 
 ## Quick How To
 !!! *you must have git-bash or something similar, this doesn't work in standard cmd.* !!! bash comes to windows soon, fingers crossed 
-
-* Install php & composer
-* composer global require laravel/installer larawhale/valet4win
-* mkdir ~/Sites && cd ~/Sites
-* laravel new blog
-* valet install
-* valet park
-* valet scan (it updates your hosts file **C:\Windows\System32\drivers\etc\hosts**, so, you have to change its properties to allow full control for current user)
-* valet start
-* cd blog && valet open (will open http://blog.dev in chrome)
-
+```
+composer global require laravel/installer vitr/valet4windows
+mkdir ~/Sites && cd ~/Sites
+laravel new blog
+valet install
+valet park
+valet scan 
+valet start
+cd blog && valet open 
+```
 ## Advanced How To
 #### Install php & composer
 As we run php with Caddy in FastCGI mode download **NTS (Non Thread Safe)** version (x86 or x64) from http://windows.php.net/download#php-7.0. Extract downloaded archive to `C:\php`.
@@ -78,13 +77,21 @@ Composer-Setup.exe windows installer does all the work for you, including puttin
 #### Install Composer packages
 From this point use **git-bash** or or other **bash** compatible terminal, as windows cmd doesn't work for us here. It's too much work to completely rewrite all the valet commands in windows shell and hopefully bash support will be included officially in Windows 10 very soon. 
 ```
-composer global require laravel/installer larawhale/valet4win
+composer global require laravel/installer vitr/valet4windows
 ```
+#### Updating your `hosts` file
+valet scan 
+(it updates your hosts file **C:\Windows\System32\drivers\etc\hosts**, so,
+you have to change its properties to allow full control for current user)
 
 #### Running Valet
 If you're on Windows there is a chance that your ports 80 and 443 are already occupied by ISS or Skype.
 Read more how to disable ISS here http://stackoverflow.com/questions/30901434/iis-manager-in-windows-10
 and how to fix Skype here http://stackoverflow.com/questions/22994888/why-skype-using-http-or-https-ports-80-and-443  
+
+#### Open Laravel site 
+cd blog && valet open 
+(will open http://blog.dev in chrome)
 
 ## List of supported applications and frameworks
 - Laravel
@@ -106,7 +113,7 @@ but my workaround with an extra cmd window works just fine.
 I see the benefits of only integration testing here. I would test each valet command and check the outcomes. Unfortunately, travis doesn't support Windows, so, I perform them manually on Windows machine. Later on, I may try https://ci.appveyor.com/
 
 ## Roadmap
-- [ ] fix larawhale names in readme
+- [x] fix larawhale names in readme
 - [ ] add actual tests
 - [ ] Combine `scan` with `park, forget, link, unlink`
 - [ ] Implement the same tests as for Mac and maybe some more
@@ -125,7 +132,7 @@ I see the benefits of only integration testing here. I would test each valet com
     - [x] open 
     - [x] park 
     - [x] paths 
-    - [ ] restart 
+    - [x] restart 
     - [x] secure (requires manual restart of Caddy, start.bat), to get rid of in-browser warning you have to manually install certificate (double click on ~\.valet\Certificates\blog.dev.crt) 
     - [x] share 
     - [x] start      
