@@ -94,9 +94,20 @@ cd blog && valet open
 (will open http://blog.dev in chrome)
 
 ## List of supported applications and frameworks
-- Laravel
-- Symfony
-- WordPress
+- [Laravel](https://laravel.com/)
+- [Symfony](https://symfony.com/) 
+- [WordPress](https://wordpress.org/) 
+- [Joomla](https://www.joomla.org/)
+- Bedrock
+- Cake
+- Craft
+- Jigsaw
+- Katana
+- Kirby
+- Sculpin
+- Statamic
+
+
 
 
 ## Unresolved Issues
