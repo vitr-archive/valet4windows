@@ -19,7 +19,7 @@ use Illuminate\Container\Container;
  */
 Container::setInstance(new Container);
 
-$version = '0.9.1';
+$version = '0.9.2';
 
 $app = new Application('Laravel Valet For Windows', $version);
 
@@ -144,11 +144,16 @@ $app->command('secure [domain]', function ($domain = null) {
     $url = ($domain ?: Site::host(getcwd())).'.'.Configuration::read()['domain'];
     Site::secure($url);
 
-    //PhpFpm::restart();
+    Caddy::stop();
 
-    //Caddy::restart();
+    $cmd = 'start "Valet" cmd.exe @cmd /k "cd '.VALET_BIN_PATH.'/../ && start.bat"';
+    pclose(popen($cmd, "r"));
 
     info('The ['.$url.'] site has been secured with a fresh TLS certificate.');
+
+    info('Valet services have been restarted.');
+
+
 });
 
 $app->command('unsecure [domain]', function ($domain = null) {

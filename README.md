@@ -124,12 +124,17 @@ but my workaround with an extra cmd window works just fine.
 I see the benefits of only integration testing here. I would test each valet command and check the outcomes. Unfortunately, travis doesn't support Windows, so, I perform them manually on Windows machine. Later on, I may try https://ci.appveyor.com/
 
 ## Roadmap
+- [ ] demo how to install a certificate (so much fun:)
 - [x] fix larawhale names in readme
 - [ ] add actual tests
 - [ ] Combine `scan` with `park, forget, link, unlink`
 - [ ] Implement the same tests as for Mac and maybe some more
 - [x] Move caddy exec to bin, Caddyfile config to ~/.valet
-- [ ] Port all original mac Valet commands
+- [ ] Clean up all the OS X leftovers
+- [ ] update caddyserver (Latest release  v0.9.0), so broken((, filled the issue here https://github.com/mholt/caddy/issues/986
+- [ ] update valet drivers
+- [x] move the history into a standalone history file (see CHANGELOG.md)
+- [x] Port all original mac Valet commands
     - [x] domain 
     - [x] fetch-share-url 
     - [x] forget 
@@ -144,15 +149,11 @@ I see the benefits of only integration testing here. I would test each valet com
     - [x] park 
     - [x] paths 
     - [x] restart 
-    - [x] secure (requires manual restart of Caddy, start.bat), to get rid of in-browser warning you have to manually install certificate (double click on ~\.valet\Certificates\blog.dev.crt) 
+    - [x] secure, to get rid of in-browser warning you have to manually install certificate (double click on ~\.valet\Certificates\blog.dev.crt and install it in the root) 
     - [x] share 
     - [x] start      
     - [x] stop 
-    - [ ] uninstall 
+    - [x] uninstall 
     - [x] unlink 
     - [x] unsecure 
     - [x] which 
-- [ ] Clean up all the OS X leftovers
-- [ ] update caddyserver (Latest release  v0.9.0)
-- [ ] update valet drivers
-- [ ] move history into standalone history file

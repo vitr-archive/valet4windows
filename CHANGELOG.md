@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [0.9.2] - 02 Aug 2016
+### Changed
+- secure command restarts Caddy automatically
+
 ## [0.9.1] - 01 Aug 2016
 ### Added
 - restart command
