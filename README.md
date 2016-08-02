@@ -1,4 +1,4 @@
-# Laravel Valet For Windows [![Latest Stable Version](https://poser.pugx.org/vitr/valet4windows/v/stable?format=flat-square)](https://packagist.org/packages/vitr/valet4windows) [![License](https://poser.pugx.org/vitr/valet4windows/license.svg?format=flat-square)](https://packagist.org/packages/vitr/valet4windows) [![Analytics](https://vitr-analytics.appspot.com/UA-75628680-1/valet4windows?flat-gif&useReferer)](https://github.com/vitr/google-analytics-beacon)
+# Laravel Valet For Windows [![Latest Stable Version](https://poser.pugx.org/vitr/valet4windows/v/stable?format=flat-square)](https://packagist.org/packages/vitr/valet4windows) [![License](https://poser.pugx.org/vitr/valet4windows/license.svg?format=flat-square)](https://packagist.org/packages/vitr/valet4windows) [![Analytics](https://vitr-analytics.appspot.com/UA-75628680-1/valet4windows?flat&useReferer)](https://github.com/vitr/google-analytics-beacon)
 
 ![Laravel Valet for Windows](https://cloud.githubusercontent.com/assets/2770290/17275120/52b52a80-5740-11e6-9e5a-22c4dfa5a977.png)
 
