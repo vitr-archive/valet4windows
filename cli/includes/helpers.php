@@ -10,7 +10,7 @@ define('VALET_BIN_PATH', $bin);
 /**
  * Define the ~/.valet path as a constant.
  */
-define('VALET_HOME_PATH', $_SERVER['HOMEPATH'].'/.valet');
+define('VALET_HOME_PATH', $_SERVER['HOMEDRIVE'] . $_SERVER['HOMEPATH'].'/.valet');
 
 /**
  * Output the given text to the console.
