@@ -11,6 +11,11 @@ In other words, a blazing fast Laravel development environment that uses roughly
 
 Please, keep in mind, an arbitrary php application won't work in Valet, you need to support them via special drivers. Obviously [Laravel](https://laravel.com/) is supported, as well, as many others popular php headliners, like [Symfony](https://symfony.com/), [WordPress](https://wordpress.org/), [Joomla](https://www.joomla.org/), etc. See the full list [here](#list-of-supported-applications-and-frameworks)
 
+## Important Notes
+- **_Windows 64-bit_** is supported (if anyone still needs 32-bit, please, make an issue)
+- Running **git-bash** as Administrator usually solves 99% of issues
+
+
 ## Quick How To
 **You must use git-bash or similar shell.** This doesn't work in standard Windows cmd, native bash will soon come to Windows, _fingers crossed_. 
 ```
@@ -131,7 +136,7 @@ I see the benefits of only integration testing here. I would test each valet com
 - [ ] Implement the same tests as for Mac and maybe some more
 - [x] Move caddy exec to bin, Caddyfile config to ~/.valet
 - [ ] Clean up all the OS X leftovers
-- [ ] update caddyserver (Latest release  v0.9.0), so broken((, filled the issue here https://github.com/mholt/caddy/issues/986
+- [x] update caddyserver (Latest release  v0.9.0), so broken((, filled the issue here https://github.com/mholt/caddy/issues/986
 - [ ] update valet drivers
 - [x] move the history into a standalone history file (see CHANGELOG.md)
 - [x] Port all original mac Valet commands

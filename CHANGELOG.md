@@ -1,6 +1,13 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [0.9.4] - 03 Aug 2016
+### Changed
+- Caddy server has been upgraded to v0.9.0 (was v0.8.3)
+### Fixed
+- bugs related to missing %HOMEDRIVE%
+
+
 ## [0.9.2] - 02 Aug 2016
 ### Changed
 - secure command restarts Caddy automatically
