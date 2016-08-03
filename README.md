@@ -17,6 +17,8 @@ Please, keep in mind, an arbitrary php application won't work in Valet, you need
 
 
 ## Quick How To
+This will set up and run a new Laravel application named `blog`, accessible on localhost http://blog.dev/. Only **php** and **composer** are required to run Valet for Windows. See [advanced how to](#advanced-how-to) if you don't have them yet.
+
 **You must use git-bash or similar shell.** This doesn't work in standard Windows cmd, native bash will soon come to Windows, _fingers crossed_. 
 ```
 composer global require laravel/installer vitr/valet4windows
