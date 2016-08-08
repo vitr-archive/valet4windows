@@ -75,7 +75,7 @@ extension=php_pdo_sqlite.dll
 ```
 Keep in mind Laravel's server requirement https://laravel.com/docs/master/installation#server-requirements.
 
-_**Tokenizer PHP Extension** is included by default in all Windows builds_
+_**Tokenizer PHP Extension** is included by default in all Windows builds_  
 Add php path (e.g. `C:\php`) to your system path.
 
 Install composer from https://getcomposer.org/download/.
