@@ -19,7 +19,7 @@ use Illuminate\Container\Container;
  */
 Container::setInstance(new Container);
 
-$version = '0.9.4';
+$version = '0.9.5';
 
 $app = new Application('Laravel Valet For Windows', $version);
 
@@ -54,12 +54,13 @@ $app->command('install', function () {
  * Allow Valet to be run more conveniently by allowing the Node proxy to run password-less sudo.
  */
 $app->command('share', function () {
-    $cmd = 'start cmd.exe @cmd /k "'.VALET_BIN_PATH.'ngrok http -host-header=rewrite blog.dev:80"';
+    $localDomain = basename(getcwd()) . '.' . Configuration::read()['domain'];
+    $cmd = 'start cmd.exe @cmd /k "'.VALET_BIN_PATH.'ngrok http -host-header=rewrite ' . $localDomain . ':80"';
     pclose(popen($cmd, "r"));
     $sharedUrl = Ngrok::currentTunnelUrl();
     exec ('echo '.$sharedUrl.' | clip');
     output(PHP_EOL.'<info>The shared url: '.$sharedUrl.' is in your clipboard!</info>');
-})->descriptions('Share !!!!!!');
+})->descriptions('Share your local site with the world');
 
 /**
  * Rescan Valet parked folders and update the hosts file (c:\Windows\System32\drivers\etc\hosts)

@@ -1,6 +1,13 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [0.9.5] - 08 Aug 2016
+### Changed
+- ngrok -> version 2.1.3
+### Fixed
+- share command works with any domain
+
+
 ## [0.9.4] - 03 Aug 2016
 ### Changed
 - Caddy server has been upgraded to v0.9.0 (was v0.8.3)
