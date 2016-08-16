@@ -12,6 +12,7 @@ In other words, a blazing fast Laravel development environment that uses roughly
 Please, keep in mind, an arbitrary php application won't work in Valet, you need to support them via special drivers. Obviously [Laravel](https://laravel.com/) is supported, as well, as many others popular php headliners, like [Symfony](https://symfony.com/), [WordPress](https://wordpress.org/), [Joomla](https://www.joomla.org/), etc. See the full list [here](#list-of-supported-applications-and-frameworks)
 
 ## Important Notes
+- Set **C:\Windows\System32\drivers\etc\hosts** file permissions to allow full control for current user/administrator 
 - **_Windows 64-bit_** is supported (if anyone still needs 32-bit, please, make an issue)
 - Running **git-bash** as Administrator usually solves 99% of issues
 
@@ -87,9 +88,11 @@ From this point use **git-bash** or or other **bash** compatible terminal, as wi
 composer global require laravel/installer vitr/valet4windows
 ```
 #### Updating your `hosts` file
-valet scan 
-(it updates your hosts file **C:\Windows\System32\drivers\etc\hosts**, so,
-you have to change its properties to allow full control for current user)
+```
+valet scan
+```
+it updates your hosts file **C:\Windows\System32\drivers\etc\hosts**, so,
+you have to change its properties to allow full control for current user.
 
 #### Running Valet
 If you're on Windows there is a chance that your ports 80 and 443 are already occupied by ISS or Skype.
