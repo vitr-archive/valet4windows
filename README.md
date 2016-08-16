@@ -14,7 +14,7 @@ Please, keep in mind, an arbitrary php application won't work in Valet, you need
 ## Important Notes
 - Set **C:\Windows\System32\drivers\etc\hosts** file permissions to allow full control for current user/administrator 
 - **_Windows 64-bit_** is supported (if anyone still needs 32-bit, please, make an issue)
-- Running **git-bash** as Administrator usually solves 99% of issues
+- Run **git-bash** as Administrator, as only Administrator can handle symlinks on Windows
 
 
 ## Quick How To
