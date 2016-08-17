@@ -134,6 +134,7 @@ but my workaround with an extra cmd window works just fine.
 I see the benefits of only integration testing here. I would test each valet command and check the outcomes. Unfortunately, travis doesn't support Windows, so, I perform them manually on Windows machine. Later on, I may try https://ci.appveyor.com/
 
 ## Roadmap
+- [ ] compile caddy with this Minimal windows service stub https://github.com/kardianos/minwinsvc
 - [ ] demo how to install a certificate (so much fun:)
 - [x] fix larawhale names in readme
 - [ ] add actual tests
