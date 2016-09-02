@@ -19,7 +19,7 @@ use Illuminate\Container\Container;
  */
 Container::setInstance(new Container);
 
-$version = '0.9.5';
+$version = '0.9.6';
 
 $app = new Application('Laravel Valet For Windows', $version);
 
@@ -98,6 +98,7 @@ $app->command('domain [domain]', function ($domain = null) {
  */
 $app->command('park', function () {
     Configuration::addPath(getcwd());
+    Host::scan();
 
     info("This directory has been added to Valet's paths.");
 })->descriptions('Register the current working directory with Valet');
@@ -117,7 +118,7 @@ $app->command('forget', function () {
  */
 $app->command('link [name]', function ($name) {
     $linkPath = Site::link(realpath(getcwd()), $name = $name ?: basename(getcwd()));
-
+    Host::scan();
     info('A ['.$name.'] symbolic link has been created in ['.$linkPath.'].');
 })->descriptions('Link the current working directory to Valet');
 
@@ -133,7 +134,7 @@ $app->command('links', function () {
  */
 $app->command('unlink [name]', function ($name) {
     Site::unlink($name = $name ?: basename(getcwd()));
-
+    Host::scan();
     info('The ['.$name.'] symbolic link has been removed.');
 })->descriptions('Remove the specified Valet link');
 
@@ -147,8 +148,8 @@ $app->command('secure [domain]', function ($domain = null) {
 
     Caddy::stop();
 
-    $cmd = 'start "Valet" cmd.exe @cmd /k "cd '.VALET_BIN_PATH.'/../ && start.bat"';
-    pclose(popen($cmd, "r"));
+//    $cmd = 'start "Valet" cmd.exe @cmd /k "cd '.VALET_BIN_PATH.'..\ && start.bat"';
+    pclose(popen(CMD_VALET_START, "r"));
 
     info('The ['.$url.'] site has been secured with a fresh TLS certificate.');
 
@@ -235,8 +236,9 @@ $app->command('fetch-share-url', function () {
  */
 $app->command('start', function () {
 
-    $cmd = 'start "Valet" cmd.exe @cmd /k "cd '.VALET_BIN_PATH.'/../ && start.bat"';
-    pclose(popen($cmd, "r"));
+//    $cmd = 'start "Valet" cmd.exe /i/k "cd /d ' . VALET_BIN_PATH . '..\ && start.bat"';
+//    echo $cmd;
+    pclose(popen(CMD_VALET_START, "r"));
     //PhpFpm::restart();
 
     //Caddy::restart();
@@ -250,8 +252,8 @@ $app->command('start', function () {
 $app->command('restart', function () {
     Caddy::stop();
 
-    $cmd = 'start "Valet" cmd.exe @cmd /k "cd '.VALET_BIN_PATH.'/../ && start.bat"';
-    pclose(popen($cmd, "r"));
+//    $cmd = 'start "Valet" cmd.exe @cmd /k "cd '.VALET_BIN_PATH.'..\ && start.bat"';
+    pclose(popen(CMD_VALET_START, "r"));
 
     info('Valet services have been restarted.');
 })->descriptions('Restart the Valet services');

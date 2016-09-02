@@ -1,6 +1,13 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [0.9.5] - 2016-09-02
+### Added
+- combine `scan` with `park, forget, link, unlink`
+### Fixed
+- path from the issue https://github.com/vitr/valet4windows/issues/6 
+
+
 ## [0.9.5] - 08 Aug 2016
 ### Changed
 - ngrok -> version 2.1.3

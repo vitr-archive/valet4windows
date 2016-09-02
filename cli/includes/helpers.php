@@ -6,6 +6,7 @@ use Symfony\Component\Process\Process;
 $bin = realpath(dirname(__FILE__));
 $bin .= '\\..\\..\\bin\\';
 define('VALET_BIN_PATH', $bin);
+define('CMD_VALET_START', 'start "Valet" cmd.exe /i/k "cd /d ' . VALET_BIN_PATH . '..\ && start.bat"');
 
 /**
  * Define the ~/.valet path as a constant.

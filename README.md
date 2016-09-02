@@ -15,6 +15,7 @@ Please, keep in mind, an arbitrary php application won't work in Valet, you need
 - Set **C:\Windows\System32\drivers\etc\hosts** file permissions to allow full control for current user/administrator 
 - **_Windows 64-bit_** is supported (if anyone still needs 32-bit, please, make an issue)
 - Run **git-bash** as Administrator, as only Administrator can handle symlinks on Windows
+- Sometimes caddy server just stops working, with no reason, sometimes it stops when the Internet connection is lost, manually running `valet restart` always helps
 
 
 ## Quick How To
@@ -135,15 +136,14 @@ I see the benefits of only integration testing here. I would test each valet com
 
 ## Roadmap
 - [ ] compile caddy with this Minimal windows service stub https://github.com/kardianos/minwinsvc
-- [ ] demo how to install a certificate (so much fun:)
-- [x] fix larawhale names in readme
-- [ ] add actual tests
-- [ ] Combine `scan` with `park, forget, link, unlink`
-- [ ] Implement the same tests as for Mac and maybe some more
-- [x] Move caddy exec to bin, Caddyfile config to ~/.valet
-- [ ] Clean up all the OS X leftovers
-- [x] update caddyserver (Latest release  v0.9.0), so broken((, filled the issue here https://github.com/mholt/caddy/issues/986
 - [ ] update valet drivers
+- [ ] demo how to install SSL certificates (so much fun:)
+- [ ] Implement the same tests as for Mac and maybe some more
+- [ ] Clean up all the OS X leftovers
+- [x] update caddyserver (Latest release  v0.9.0)
+- [x] Combine `scan` with `park, forget, link, unlink`
+- [x] Move caddy exec to bin, Caddyfile config to ~/.valet
+- [x] fix larawhale names in readme
 - [x] move the history into a standalone history file (see CHANGELOG.md)
 - [x] Port all original mac Valet commands
     - [x] domain 
