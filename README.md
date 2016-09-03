@@ -15,7 +15,7 @@ Please, keep in mind, an arbitrary php application won't work in Valet, you need
 - Set **C:\Windows\System32\drivers\etc\hosts** file permissions to allow full control for current user/administrator 
 - **_Windows 64-bit_** is supported (if anyone still needs 32-bit, please, make an issue)
 - Run **git-bash** as Administrator, as only Administrator can handle symlinks on Windows
-- Sometimes caddy server just stops working, with no reason, sometimes it stops when the Internet connection is lost, manually running `valet restart` always helps
+- Sometimes caddy server just stops working (`502 Bad Gateway`), without any reason, sometimes it stops when the Internet connection is lost, manually running `valet restart` always helps
 
 
 ## Quick How To
