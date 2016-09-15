@@ -7,7 +7,8 @@ This is Windows version of [Laravel Valet](https://github.com/laravel/valet). Va
 
 Laravel Valet for Windows configures your PC to run [Caddy](https://caddyserver.com/) on demand. Then, using `c:\Windows\System32\drivers\etc\hosts` file, Valet proxies all requests on the `*.dev` domain to point to sites installed on your local machine.
 
-In other words, a blazing fast Laravel development environment that uses roughly 7mb of RAM(???have to double check this???). Valet isn't a complete replacement for Vagrant or Homestead, but provides a great alternative if you want flexible basics, prefer extreme speed, or are working on a machine with a limited amount of RAM.
+In other words, a blazing fast Laravel development environment that uses roughly les than 1mb of RAM ([see RAM usage](https://cloud.githubusercontent.com/assets/2770290/18549736/99de22fa-7b93-11e6-9bb4-adc4e641e2dd.png)).
+Valet isn't a complete replacement for Vagrant or Homestead, but provides a great alternative if you want flexible basics, prefer extreme speed, or are working on a machine with a limited amount of RAM.
 
 Please, keep in mind, an arbitrary php application won't work in Valet, you need to support them via special drivers. Obviously [Laravel](https://laravel.com/) is supported, as well, as many others popular php headliners, like [Symfony](https://symfony.com/), [WordPress](https://wordpress.org/), [Joomla](https://www.joomla.org/), etc. See the full list [here](#list-of-supported-applications-and-frameworks)
 
