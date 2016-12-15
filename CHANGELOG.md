@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [0.9.6] - 2016-12-15
+### Fixed
+- path from the issue https://github.com/vitr/valet4windows/issues/10 
+
 ## [0.9.5] - 2016-09-02
 ### Added
 - combine `scan` with `park, forget, link, unlink`
